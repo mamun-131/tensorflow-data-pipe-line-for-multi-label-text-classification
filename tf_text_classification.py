@@ -154,6 +154,7 @@ def encode_mapping(line):
     label.set_shape([])
     return encoded_text, label
 
+# Padding
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 ds_train = ds_train.map(encode_mapping,num_parallel_calls=AUTOTUNE).cache()
 ds_train = ds_train.shuffle(100)
